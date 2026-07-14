@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+
+const categoryMeta = {
+  live: {
+    title: "To Live",
+    desc: "",
+  },
+  die: {
+    title: "To Die",
+    desc: "",
+  },
+  remember: {
+    title: "To Remember",
+    desc: "",
+  },
+} as const;
+
+const categories = Object.entries(categoryMeta).map(([key, meta]) => {
+  const count = posts.filter((post) => post.data.category === key).length;
+  return {
+    slug: key,
+    href: `/blog/category/${key}`,
+    count,
+    ...meta,
+  };
+});
+---
+
+<section class="section categories">
+  <div class="section-head fade-in">
+    <span class="eyebrow">Choose Your Dimension</span>
+  </div>
+  <div class="cards-grid">
+    {categories.map((category) => (
+      <a href={category.href} class="orbit-card fade-in">
+        <div class="orbit-card-body">
+          <h3 class="orbit-card-title">{category.title}</h3>
+          <p class="orbit-card-desc">{category.desc}</p>
+          <span class="orbit-card-count">{category.count} bài viết</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

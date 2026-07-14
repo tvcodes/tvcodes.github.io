@@ -1,0 +1,21 @@
+---
+import { Content, frontmatter } from './about.md';
+---
+
+<section class="about">
+  <div class="about-hero fade-in">
+    <h1>{frontmatter.title}</h1>
+    <span class="eyebrow">{frontmatter.eyebrow}</span>
+  </div>
+
+  <div class="about-body fade-in">
+    <Content />
+  </div>
+</section>
+
+<style>
+  .about-hero h1 {
+    white-space: nowrap;
+    font-size: clamp(1rem, 3.5vw, 2.5rem);
+  }
+</style>

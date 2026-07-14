@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Navbar from "../../../components/common/Navbar.astro";
+import Footer from "../../../components/common/Footer.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const categories = ["live", "die", "remember"] as const;
+
+  return categories.map((category) => {
+    const filteredPosts = posts
+      .filter((post) => post.data.category === category)
+      .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+    return {
+      params: { category },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { category } = Astro.params;
+const { posts } = Astro.props;
+
+const categoryTitle: Record<string, string> = {
+  live: "To Live",
+  die: "To Die",
+  remember: "To Remember",
+};
+---
+
+<BaseLayout title={`${categoryTitle[category]} - Bài viết`}>
+  <Navbar />
+
+  <main class="section">
+    <div class="section-head">
+      <span class="eyebrow">Blog</span>
+      <h1>{categoryTitle[category]}</h1>
+    </div>
+
+    {posts.length === 0 ? (
+      <p class="empty-state">Chưa có bài viết nào trong category này.</p>
+    ) : (
+      <div class="posts-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="post-card">
+            <span class="post-tag">{post.data.category}</span>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+          </a>
+        ))}
+      </div>
+    )}
+  </main>
+
+  <Footer />
+</BaseLayout>

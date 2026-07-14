@@ -1,0 +1,41 @@
+<section class="blog">
+
+  <div class="blog-head fade-in">
+    <span class="eyebrow">The Archive</span>
+
+    <h1>All Posts</h1>
+
+    <p class="hero-sub">
+      Every review, reflection, and rabbit hole — sorted, filtered, and ready to explore.
+    </p>
+  </div>
+
+  <div class="blog-controls">
+    <button class="filter-pill active" data-filter="all" type="button">
+      All
+    </button>
+
+    <button class="filter-pill" data-filter="live" type="button">
+      To Live
+    </button>
+
+    <button class="filter-pill" data-filter="die" type="button">
+      To Die
+    </button>
+
+    <button class="filter-pill" data-filter="remember" type="button">
+      To Remember
+    </button>
+
+    <select class="sort-select" id="sortSelect">
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+      <option value="popular">Most Popular</option>
+    </select>
+  </div>
+
+  <div class="posts-grid" id="postsGrid"></div>
+
+  <div class="pagination" id="pagination"></div>
+
+</section>
