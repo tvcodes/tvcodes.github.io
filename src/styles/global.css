@@ -223,10 +223,7 @@ main{ position:relative; z-index:1; }
     transition: border-color .3s var(--ease), transform .3s var(--ease);
   }
 
-.card:hover{
-  border-color: rgba(91,141,239,0.4);
-  transform: translateY(-4px);
-}
+.card:hover{ transform:translateY(-8px); border-color:rgba(91,141,239,0.4); box-shadow:0 16px 40px rgba(91,141,239,0.15); }
 
   .card-left{ min-height:380px; }
   .card-middle{ min-height:380px; } /* cao bằng card-left, đứng riêng 1 cột */
@@ -236,12 +233,12 @@ main{ position:relative; z-index:1; }
   .card-bg{
   position:absolute; inset:0; z-index:0;
   background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-  background-color:#0a0e1a;
+  background:#070a14;
   }
   .bg-cyan,
   .bg-purple,
   .bg-blue{
-    background-color:#0a0e1a;
+    background:#070a14;
   }
   .card-info{
     position:relative; z-index:1; height:100%;
