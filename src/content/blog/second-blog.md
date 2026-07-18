@@ -1,20 +1,15 @@
-
 ---
-title: "Second"
-description: "Welcome to my universe."
-pubDate: 2026-07-03
-category: "die"
+title: "Your Life Circumstance Is Not Your Life Sentence"
+description: ""
+pubDate: 2026-07-14
+category: "remember"
 featured: true
-
+author:
+  name: "tvcodes"
+  role: "Creator"
+  avatar: "/images/avatar.jpg"
+tags: ["Cuộc sống", "Tự do", "Suy ngẫm"]
+featuredIn: ["Live Series"]
 ---
 
-# Hello World
-
-Đây là bài viết đầu tiên trên ME-NIVERSE.
-
-Tôi sẽ viết về:
-
-- Movies
-- Music
-- Books
-- Random thoughts
+Hoàn cảnh cuộc đời bạn không phải là bản án chung thân.
