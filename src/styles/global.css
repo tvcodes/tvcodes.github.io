@@ -205,6 +205,81 @@ main{ position:relative; z-index:1; }
 .orbit-card-title{ display:flex; align-items:center; gap:10px; font-family:var(--font-head); font-size:19px; font-weight:600; margin-bottom:10px; }
 .orbit-card-desc{ color:var(--text-muted); font-size:14.5px; line-height:1.55; }
 
+/* ===================== POST LIST (category page) ===================== */
+.posts-list{
+  max-width:1000px;
+  margin:0 auto;
+  padding:0 24px;
+  border-top:1px solid var(--border-soft);
+}
+
+.post-list-item{
+  display:grid;
+  grid-template-columns:60px 1fr 320px 24px;
+  align-items:center;
+  gap:24px;
+  padding:24px 8px;
+  border-bottom:1px solid var(--border-soft);
+  text-decoration:none;
+  color:inherit;
+  transition:.2s var(--ease);
+}
+.post-list-item:hover{
+  background:rgba(255,255,255,0.02);
+}
+
+.post-list-thumb{
+  width:60px; height:60px; border-radius:50%;
+  overflow:hidden;
+  background:rgba(91,141,239,0.12);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.post-list-thumb img{
+  width:100%; height:100%; object-fit:cover;
+}
+.post-list-thumb-fallback{
+  font-size:22px; font-weight:700; color:var(--blue-bright);
+}
+
+.post-list-body h3{
+  font-size:19px; font-weight:600; line-height:1.35; color:var(--text);
+}
+
+.post-list-desc{
+  font-size:14px; color:var(--text-muted); line-height:1.5;
+}
+
+.post-list-arrow{
+  width:36px; height:36px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--border);
+  color:var(--blue-bright);
+  font-size:16px;
+  transition:.25s var(--ease);
+}
+.post-list-item:hover .post-list-arrow{
+  background:var(--blue-bright);
+  color:#03040a;
+  border-color:var(--blue-bright);
+}
+
+/* Mobile: stack layout */
+@media (max-width: 700px){
+  .post-list-item{
+    grid-template-columns:48px 1fr;
+    grid-template-areas:
+      "thumb body"
+      "desc desc"
+      "arrow arrow";
+    gap:12px 16px;
+  }
+  .post-list-thumb{ grid-area:thumb; width:48px; height:48px; }
+  .post-list-body{ grid-area:body; }
+  .post-list-desc{ grid-area:desc; }
+  .post-list-arrow{ grid-area:arrow; justify-self:end; }
+}
+
 /* ===================== FEATURED ===================== */
   .featured-heading{ font-size:32px; font-weight:600; margin-bottom:32px; }
 

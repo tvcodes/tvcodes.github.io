@@ -5,8 +5,8 @@ pubDate: 2026-07-14
 category: "live"
 featured: true
 author:
-  name: "tvcodes"
-  role: "Creator"
+  name: "An Phong"
+  role: "Writer"
   avatar: "/images/avatar.jpg"
 tags: ["Cuộc sống", "Tự do", "Suy ngẫm"]
 featuredIn: ["Live Series"]
