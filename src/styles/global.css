@@ -220,22 +220,34 @@ main{ position:relative; z-index:1; }
     position:relative; border-radius:16px; overflow:hidden;
     border:1px solid var(--border-soft);
     display:block; text-decoration:none; color:inherit;
+    transition: border-color .3s var(--ease), transform .3s var(--ease);
   }
+
+.card:hover{
+  border-color: rgba(91,141,239,0.4);
+  transform: translateY(-4px);
+}
 
   .card-left{ min-height:380px; }
   .card-middle{ min-height:380px; } /* cao bằng card-left, đứng riêng 1 cột */
   .card-stack{ display:flex; flex-direction:column; gap:20px; height:100%; }
   .card-small{ flex:1; min-height:180px; }
 
-  .card-bg{ position:absolute; inset:0; z-index:0; opacity:.55; }
-  .bg-cyan{ background:radial-gradient(circle at 40% 30%, var(--cyan) 0%, #010b2e 65%); }
-  .bg-purple{ background:radial-gradient(circle at 60% 40%, var(--purple) 0%, #04060d 65%); }
-  .bg-blue{ background:radial-gradient(circle at 50% 50%, var(--blue-bright) 0%, #04060d 65%); }
-
+  .card-bg{
+  position:absolute; inset:0; z-index:0;
+  background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  background-color:#0a0e1a;
+  }
+  .bg-cyan,
+  .bg-purple,
+  .bg-blue{
+    background-color:#0a0e1a;
+  }
   .card-info{
     position:relative; z-index:1; height:100%;
     display:flex; flex-direction:column; justify-content:flex-end;
     padding:28px;
+    background:linear-gradient(180deg, transparent 0%, rgba(4,6,13,0.7) 100%);
   }
   .card-badge{
   position:absolute; top:20px; left:20px; z-index:1;
