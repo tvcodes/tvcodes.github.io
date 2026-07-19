@@ -414,7 +414,12 @@ main{ position:relative; z-index:1; }
 }
 .page-btn:hover{ border-color:rgba(91,141,239,0.5); color:var(--text); }
 .page-btn.active{ background:var(--blue); border-color:var(--blue); color:#03040a; font-weight:600; }
-
+.post-body img{
+  width:100%;
+  border-radius:var(--r-lg);
+  border:1px solid var(--border-soft);
+  margin:28px 0;
+}
 
 /* ===================== FOOTER ===================== */
 .site-footer{
