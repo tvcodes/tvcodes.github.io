@@ -4,9 +4,6 @@ title: Xin chào! Mình là quá khứ, hiện tại và tương lai của TVCOD
 description: "..."
 pubDate: 2026-07-07
 featured: true
-heroImage: "/images/blog/aboutme.jpg"
-heroImageCaption: "Mã Tiểu Dã"
-heroImageCredit: "xiaohongshu"
 ---
 Mình hay overthinking lắm. Có những suy nghĩ cứ lặp đi lặp lại trong đầu đến mức mình cảm thấy, nếu không tìm một nơi để đặt chúng xuống, có lẽ chúng sẽ làm mình phát điên mất. Thế là ME-NIVERSE ra đời. Có người viết nhật ký, có người đi du lịch, còn mình chọn viết blog. Đây giống một liệu pháp hơn là một dự án.
 
