@@ -219,9 +219,11 @@ main{ position:relative; z-index:1; }
   }
 
   .hero-banner{
+    min-height:100vh;
     padding-left:24px;
     padding-right:24px;
-    min-height:60vh;
+    align-items:flex-end;
+    padding-bottom:80px;
   }
 }
 /* ===================== CATEGORY CARDS ===================== */
