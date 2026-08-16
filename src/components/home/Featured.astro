@@ -7,8 +7,8 @@ const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate
 const featuredPost = sorted.find((p) => p.data.featured) ?? sorted[0];
 const rest = sorted.filter((p) => p.id !== featuredPost?.id);
 
-const middlePost = rest[0];        // khung dọc chính giữa
-const rightPosts = rest.slice(1, 3); // 2 khung nhỏ bên phải
+const middlePost = rest[0];
+const rightPosts = rest.slice(1, 3);
 
 function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
@@ -22,10 +22,13 @@ const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
     <>
       <h2 class="featured-heading"><span class="eyebrow">Featured</span></h2>
 
-<div class="grid-layout">
+      <div class="grid-layout">
         <!-- Khung 1: card lớn bên trái -->
         <a href={`/blog/${featuredPost.id}`} class="card card-left">
-          <div class="card-bg bg-cyan"></div>
+          <div
+            class:list={['card-bg', !featuredPost.data.heroImage && 'bg-cyan']}
+            style={featuredPost.data.heroImage ? `background-image:url(${featuredPost.data.heroImage})` : undefined}
+          ></div>
           <span class="card-badge">{featuredPost.data.category}</span>
           <div class="card-info">
             <span class="card-meta">{formatDate(featuredPost.data.pubDate)}</span>
@@ -37,7 +40,10 @@ const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
         <!-- Khung 2: dọc chính giữa -->
         {middlePost && (
           <a href={`/blog/${middlePost.id}`} class="card card-middle">
-            <div class="card-bg bg-purple"></div>
+            <div
+              class:list={['card-bg', !middlePost.data.heroImage && 'bg-purple']}
+              style={middlePost.data.heroImage ? `background-image:url(${middlePost.data.heroImage})` : undefined}
+            ></div>
             <span class="card-badge">{middlePost.data.category}</span>
             <div class="card-info">
               <span class="card-meta">{formatDate(middlePost.data.pubDate)}</span>
@@ -52,7 +58,10 @@ const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
           <div class="card-stack">
             {rightPosts.map((post, i) => (
               <a href={`/blog/${post.id}`} class="card card-small">
-                <div class:list={['card-bg', gradients[i % gradients.length]]}></div>
+                <div
+                  class:list={['card-bg', !post.data.heroImage && gradients[i % gradients.length]]}
+                  style={post.data.heroImage ? `background-image:url(${post.data.heroImage})` : undefined}
+                ></div>
                 <span class="card-badge">{post.data.category}</span>
                 <div class="card-info">
                   <span class="card-meta">{formatDate(post.data.pubDate)}</span>
