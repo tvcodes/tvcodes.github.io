@@ -173,13 +173,23 @@ main{ position:relative; z-index:1; }
   content:''; position:absolute; left:2px; right:2px; bottom:4px; height:2px;
   background:var(--blue-bright); opacity:.55;
 }
-.hero-sub{ color:var(--text-muted); font-size:17px; line-height:1.65; margin-bottom:36px; max-width:460px; }
+.hero-sub{
+  color:var(--text-muted);
+  font-size:17px;
+  line-height:1.65;
+  margin-bottom:36px;
+  white-space:nowrap;
+}
 .hero-actions{ display:flex; align-items:center; justify-content:center; gap:30px; flex-wrap:wrap; }
 
 @media (max-width: 780px){
   .hero h1{
     white-space:normal;
     font-size:clamp(28px,7vw,40px);
+  }
+
+  .hero-sub{
+    white-space:normal;
   }
 }
 
