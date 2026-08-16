@@ -10,6 +10,7 @@ const blog = defineCollection({
     category: z.enum(["live", "die", "remember"]),
     featured: z.boolean().default(false),
     heroImage: z.string().optional(),
+    heroImagePosition: z.string().optional(),
     heroImageCaption: z.string().optional(),
     heroImageCredit: z.string().optional(),
     author: z.object({

@@ -14,6 +14,12 @@ function formatDate(date: Date) {
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
+function bgStyle(post: typeof featuredPost) {
+  if (!post?.data.heroImage) return undefined;
+  const position = post.data.heroImagePosition || 'center';
+  return `background-image:url(${post.data.heroImage}); background-position:${position}`;
+}
+
 const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
 ---
 
@@ -27,7 +33,7 @@ const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
         <a href={`/blog/${featuredPost.id}`} class="card card-left">
           <div
             class:list={['card-bg', !featuredPost.data.heroImage && 'bg-cyan']}
-            style={featuredPost.data.heroImage ? `background-image:url(${featuredPost.data.heroImage})` : undefined}
+            style={bgStyle(featuredPost)}
           ></div>
           <span class="card-badge">{featuredPost.data.category}</span>
           <div class="card-info">
@@ -42,7 +48,7 @@ const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
           <a href={`/blog/${middlePost.id}`} class="card card-middle">
             <div
               class:list={['card-bg', !middlePost.data.heroImage && 'bg-purple']}
-              style={middlePost.data.heroImage ? `background-image:url(${middlePost.data.heroImage})` : undefined}
+              style={bgStyle(middlePost)}
             ></div>
             <span class="card-badge">{middlePost.data.category}</span>
             <div class="card-info">
@@ -60,7 +66,7 @@ const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
               <a href={`/blog/${post.id}`} class="card card-small">
                 <div
                   class:list={['card-bg', !post.data.heroImage && gradients[i % gradients.length]]}
-                  style={post.data.heroImage ? `background-image:url(${post.data.heroImage})` : undefined}
+                  style={bgStyle(post)}
                 ></div>
                 <span class="card-badge">{post.data.category}</span>
                 <div class="card-info">
