@@ -18,4 +18,11 @@ import { Content, frontmatter } from './about.md';
     white-space: nowrap;
     font-size: clamp(1rem, 3.5vw, 2.5rem);
   }
+
+  @media (max-width: 780px) {
+    .about-hero h1 {
+      white-space: normal;
+      font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+  }
 </style>

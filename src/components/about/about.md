@@ -1,6 +1,6 @@
 
 ---
-title: Xin chào! Mình là quá khứ, hiện tại và tương lai của TVCODES
+title: Xin chào! Mình là quá khứ, hiện tại và tương lai của tvcodes
 description: "..."
 pubDate: 2026-07-07
 featured: true

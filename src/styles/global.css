@@ -217,13 +217,11 @@ main{ position:relative; z-index:1; }
     white-space:normal;
   }
 
-
   .hero-banner{
     min-height:100vh;
     padding-left:24px;
     padding-right:24px;
-    align-items:flex-end;
-    padding-bottom:80px;
+    justify-content:center;
   }
 }
 /* ===================== CATEGORY CARDS ===================== */
@@ -620,7 +618,7 @@ main{ position:relative; z-index:1; }
   .main-nav{ display:none; }
   .hamburger{ display:flex; }
   .hero{ flex-direction:column; padding:120px 24px 60px; gap:44px; min-height:auto; }
-  .hero-banner{ min-height:100vh; padding:120px 24px 80px; align-items:flex-end; }
+  .hero-banner{ min-height:100vh; padding:24px; justify-content:center; }
   .hero-visual{ width:100%; height:300px; max-width:100%; }
   .hero-content{ max-width:100%; }
   .section{ padding:64px 24px; }
