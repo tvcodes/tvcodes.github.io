@@ -17,7 +17,7 @@ function formatDate(date: Date) {
 function bgStyle(post: typeof featuredPost) {
   if (!post?.data.coverImage) return undefined;
   const position = post.data.heroImagePosition || 'center';
-  return `background-image:url(${post.data.heroImage}); background-position:${position}`;
+  return `background-image:url(${post.data.coverImage}); background-position:${position}`;
 }
 
 const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
