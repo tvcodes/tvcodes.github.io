@@ -146,10 +146,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .section-head .eyebrow{ display:block; text-align:center; }
 .section-head h2{ font-size:clamp(28px,3vw,38px); font-weight:500; }
 
-.categories {
-    padding-top: 100px;
-}
-
 /* ===================== PAGE SWITCHING ===================== */
 main{ position:relative; z-index:1; }
 .page{ animation:pageFade .5s var(--ease); }
@@ -392,7 +388,7 @@ main{ position:relative; z-index:1; }
 }
 
 .about-body {
-    max-width: 1400px;   /
+    max-width: 1400px;   
     margin-left: 2cm;
     margin-right: 1cm;   
     text-align: left;
