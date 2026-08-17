@@ -15,7 +15,7 @@ function formatDate(date: Date) {
 }
 
 function bgStyle(post: typeof featuredPost) {
-  if (!post?.data.heroImage) return undefined;
+  if (!post?.data.coverImage) return undefined;
   const position = post.data.heroImagePosition || 'center';
   return `background-image:url(${post.data.heroImage}); background-position:${position}`;
 }
@@ -32,7 +32,7 @@ const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
         <!-- Khung 1: card lớn bên trái -->
         <a href={`/blog/${featuredPost.id}`} class="card card-left">
           <div
-            class:list={['card-bg', !featuredPost.data.heroImage && 'bg-cyan']}
+            class:list={['card-bg', !featuredPost.data.coverImage && 'bg-cyan']}
             style={bgStyle(featuredPost)}
           ></div>
           <span class="card-badge">{featuredPost.data.category}</span>
@@ -47,7 +47,7 @@ const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
         {middlePost && (
           <a href={`/blog/${middlePost.id}`} class="card card-middle">
             <div
-              class:list={['card-bg', !middlePost.data.heroImage && 'bg-purple']}
+              class:list={['card-bg', !middlePost.data.coverImage && 'bg-purple']}
               style={bgStyle(middlePost)}
             ></div>
             <span class="card-badge">{middlePost.data.category}</span>
@@ -65,7 +65,7 @@ const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
             {rightPosts.map((post, i) => (
               <a href={`/blog/${post.id}`} class="card card-small">
                 <div
-                  class:list={['card-bg', !post.data.heroImage && gradients[i % gradients.length]]}
+                  class:list={['card-bg', !post.data.coverImage && gradients[i % gradients.length]]}
                   style={bgStyle(post)}
                 ></div>
                 <span class="card-badge">{post.data.category}</span>
