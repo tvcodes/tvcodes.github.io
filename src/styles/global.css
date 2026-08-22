@@ -314,7 +314,7 @@ main{ position:relative; z-index:1; }
 
 .featured-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
   gap:28px;
   max-width:1100px;
 }
@@ -322,8 +322,9 @@ main{ position:relative; z-index:1; }
 .featured-card{
   display:flex;
   flex-direction:column;
+  align-items:flex-start;
   gap:14px;
-  padding:24px;
+  padding:28px;
   background:linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.01));
   border:1px solid var(--border);
   border-radius:var(--r-lg);
@@ -338,12 +339,9 @@ main{ position:relative; z-index:1; }
 }
 
 .featured-card-date{
-  align-self:flex-start;
   font-size:13px;
-  color:var(--text-muted);
-  border:1px solid var(--border);
-  border-radius:999px;
-  padding:4px 12px;
+  font-weight:600;
+  color:#5b8def;
 }
 
 .featured-card-title{
@@ -354,7 +352,6 @@ main{ position:relative; z-index:1; }
 }
 
 .featured-card-btn{
-  align-self:flex-start;
   font-size:13px;
   font-weight:600;
   color:#5b8def;
@@ -363,14 +360,17 @@ main{ position:relative; z-index:1; }
   padding:6px 14px;
 }
 
+.featured-card-divider{
+  width:100%;
+  border:none;
+  border-top:1px dashed var(--border);
+  margin:0;
+}
+
 .featured-card-desc{
   color:var(--text-muted);
   font-size:14.5px;
-  line-height:1.55;
-  display:-webkit-box;
-  -webkit-line-clamp:3;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
+  line-height:1.6;
 }
 /* ===================== ABOUT ===================== */
 .about-hero {

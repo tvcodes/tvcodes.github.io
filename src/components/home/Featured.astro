@@ -6,7 +6,7 @@ const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate
 
 const featuredPost = sorted.find((p) => p.data.featured) ?? sorted[0];
 const rest = sorted.filter((p) => p.id !== featuredPost?.id);
-const otherPosts = rest.slice(0, 2);
+const otherPosts = rest.slice(0, 3);
 
 const displayPosts = featuredPost ? [featuredPost, ...otherPosts] : [];
 
@@ -27,9 +27,10 @@ function formatDate(date: Date) {
       <div class="featured-grid">
         {displayPosts.map((post) => (
           <a href={`/blog/${post.id}`} class="featured-card fade-in">
-            <span class="featured-card-date">{formatDate(post.data.pubDate)}</span>
+            <span class="featured-card-date">📅 {formatDate(post.data.pubDate)}</span>
             <h3 class="featured-card-title">{post.data.title}</h3>
             <span class="featured-card-btn">View more</span>
+            <hr class="featured-card-divider" />
             <p class="featured-card-desc">{post.data.description}</p>
           </a>
         ))}
