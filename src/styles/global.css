@@ -325,7 +325,6 @@ main{ position:relative; z-index:1; }
   align-items:flex-start;
   gap:14px;
   padding:28px;
-  min-height:400px;
   background:linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.01));
   border:1px solid var(--border);
   border-radius:var(--r-lg);
@@ -371,7 +370,6 @@ main{ position:relative; z-index:1; }
 }
 
 .featured-card-desc{
-  flex:1;
   color:var(--text-muted);
   font-size:14.5px;
   line-height:1.6;
