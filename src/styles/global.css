@@ -385,6 +385,10 @@ main{ position:relative; z-index:1; }
   .featured-grid{ grid-template-columns:1fr; }
 }
 
+.view-all-wrap{
+  text-align:center;
+  margin-top:75px;
+}
 /* ===================== ABOUT ===================== */
 .about-hero {
     text-align: center;
