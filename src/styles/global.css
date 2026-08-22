@@ -197,7 +197,7 @@ main{ position:relative; z-index:1; }
   max-width:600px;
 }
 .hero-banner .hero-sub{
-  white-space:normal; /* banner rộng hơn, câu dài không cần ép 1 hàng nữa */
+  white-space:normal;
 }
 .hero-banner .hero-actions{
   justify-content:flex-start;
@@ -310,76 +310,68 @@ main{ position:relative; z-index:1; }
 }
 
 /* ===================== FEATURED ===================== */
-  .featured-heading{ font-size:32px; font-weight:600; margin-bottom:32px; }
+.featured-heading{ font-family:var(--font-head); font-size:26px; margin-bottom:24px; }
 
-  .grid-layout{
-    display:grid;
-    grid-template-columns: 1.1fr 0.8fr 1fr;
-    gap:20px;
-    margin-bottom:32px;
-    align-items:stretch;
-  }
-
-  .card{
-    position:relative; border-radius:16px; overflow:hidden;
-    border:1px solid var(--border-soft);
-    display:block; text-decoration:none; color:inherit;
-    transition: border-color .3s var(--ease), transform .3s var(--ease);
-  }
-
-.card:hover{ transform:translateY(-8px); border-color:rgba(91,141,239,0.4); box-shadow:0 16px 40px rgba(91,141,239,0.15); }
-
-  .card-left{ min-height:380px; }
-  .card-middle{ min-height:380px; } /* cao bằng card-left, đứng riêng 1 cột */
-  .card-stack{ display:flex; flex-direction:column; gap:20px; height:100%; }
-  .card-small{ flex:1; min-height:180px; }
-
-  .card-bg{
-  position:absolute; inset:0; z-index:0;
-  background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-  background:#070a14;
-  }
-  .bg-cyan,
-  .bg-purple,
-  .bg-blue{
-    background:#070a14;
-  }
-  .card-info{
-    position:relative; z-index:1; height:100%;
-    display:flex; flex-direction:column; justify-content:flex-end;
-    padding:28px;
-    background:linear-gradient(180deg, transparent 0%, rgba(4,6,13,0.7) 100%);
-  }
-  .card-badge{
-  position:absolute; top:20px; left:20px; z-index:1;
-  display:inline-flex; align-items:center; gap:6px;
-  padding:6px 12px; border-radius:20px;
-  background:rgba(4,6,13,.6);
-  backdrop-filter:blur(6px);
-  border:1px solid rgba(255,255,255,.15);
-  font-size:11px; font-weight:600; letter-spacing:1px;
-  text-transform:uppercase; color:#fff;
+.featured-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  max-width:1100px;
 }
-.card-badge::before{
-  content:''; width:6px; height:6px; border-radius:50%;
-  background:var(--blue-bright);
-  flex-shrink:0;
+
+.featured-card{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding:24px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.01));
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+  text-decoration:none;
+  color:inherit;
 }
-  .eyebrow{
-    font-size:32px; letter-spacing:1px; color:var(--blue-bright);
-    text-transform:uppercase; margin-bottom:8px;
-  }
-  .card-meta{ font-size:13px; color:var(--text-muted); margin-bottom:6px; display:block; }
-  .card-middle h3,
-  .card-small h3{ font-size:18px; font-weight:600; line-height:1.3; }
-  .featured-post-title{ font-size:26px; font-weight:600; margin-bottom:10px; }
-  .featured-excerpt{ color:var(--text-muted); font-size:15px; margin-bottom:14px; }
+.featured-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(91,141,239,0.4);
+  box-shadow:0 16px 40px rgba(91,141,239,0.15);
+}
 
-  @media (max-width:900px){
-    .grid-layout{ grid-template-columns:1fr; }
-    .card-stack{ flex-direction:row; }
-  }
+.featured-card-date{
+  align-self:flex-start;
+  font-size:13px;
+  color:var(--text-muted);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:4px 12px;
+}
 
+.featured-card-title{
+  font-family:var(--font-head);
+  font-size:19px;
+  font-weight:600;
+  line-height:1.35;
+}
+
+.featured-card-btn{
+  align-self:flex-start;
+  font-size:13px;
+  font-weight:600;
+  color:#5b8def;
+  border:1px solid rgba(91,141,239,0.4);
+  border-radius:8px;
+  padding:6px 14px;
+}
+
+.featured-card-desc{
+  color:var(--text-muted);
+  font-size:14.5px;
+  line-height:1.55;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
 /* ===================== ABOUT ===================== */
 .about-hero {
     text-align: center;

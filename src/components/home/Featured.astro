@@ -6,78 +6,33 @@ const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate
 
 const featuredPost = sorted.find((p) => p.data.featured) ?? sorted[0];
 const rest = sorted.filter((p) => p.id !== featuredPost?.id);
+const otherPosts = rest.slice(0, 2);
 
-const middlePost = rest[0];
-const rightPosts = rest.slice(1, 3);
+const displayPosts = featuredPost ? [featuredPost, ...otherPosts] : [];
 
 function formatDate(date: Date) {
-  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  return date.toLocaleDateString('en-US', {
+    month: '2-digit',
+    day: '2-digit',
+    year: 'numeric',
+  });
 }
-
-function bgStyle(post: typeof featuredPost) {
-  if (!post?.data.coverImage) return undefined;
-  const position = post.data.heroImagePosition || 'center';
-  return `background-image:url(${post.data.coverImage}); background-position:${position}`;
-}
-
-const gradients = ['bg-cyan', 'bg-purple', 'bg-blue'];
 ---
 
 <section class="section featured">
-  {featuredPost && (
+  {displayPosts.length > 0 && (
     <>
       <h2 class="featured-heading">Featured</h2>
 
-      <div class="grid-layout">
-        <!-- Khung 1: card lớn bên trái -->
-        <a href={`/blog/${featuredPost.id}`} class="card card-left">
-          <div
-            class:list={['card-bg', !featuredPost.data.coverImage && 'bg-cyan']}
-            style={bgStyle(featuredPost)}
-          ></div>
-          <span class="card-badge">{featuredPost.data.category}</span>
-          <div class="card-info">
-            <span class="card-meta">{formatDate(featuredPost.data.pubDate)}</span>
-            <h1 class="featured-post-title">{featuredPost.data.title}</h1>
-            <p class="featured-excerpt">{featuredPost.data.description}</p>
-          </div>
-        </a>
-
-        <!-- Khung 2: dọc chính giữa -->
-        {middlePost && (
-          <a href={`/blog/${middlePost.id}`} class="card card-middle">
-            <div
-              class:list={['card-bg', !middlePost.data.coverImage && 'bg-purple']}
-              style={bgStyle(middlePost)}
-            ></div>
-            <span class="card-badge">{middlePost.data.category}</span>
-            <div class="card-info">
-              <span class="card-meta">{formatDate(middlePost.data.pubDate)}</span>
-              <h3>{middlePost.data.title}</h3>
-              <p class="featured-excerpt">{middlePost.data.description}</p>
-            </div>
+      <div class="featured-grid">
+        {displayPosts.map((post) => (
+          <a href={`/blog/${post.id}`} class="featured-card fade-in">
+            <span class="featured-card-date">{formatDate(post.data.pubDate)}</span>
+            <h3 class="featured-card-title">{post.data.title}</h3>
+            <span class="featured-card-btn">View more</span>
+            <p class="featured-card-desc">{post.data.description}</p>
           </a>
-        )}
-
-        <!-- Khung 3 + 4: xếp chồng bên phải -->
-        {rightPosts.length > 0 && (
-          <div class="card-stack">
-            {rightPosts.map((post, i) => (
-              <a href={`/blog/${post.id}`} class="card card-small">
-                <div
-                  class:list={['card-bg', !post.data.coverImage && gradients[i % gradients.length]]}
-                  style={bgStyle(post)}
-                ></div>
-                <span class="card-badge">{post.data.category}</span>
-                <div class="card-info">
-                  <span class="card-meta">{formatDate(post.data.pubDate)}</span>
-                  <h3>{post.data.title}</h3>
-                  <p class="featured-excerpt">{post.data.description}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        )}
+        ))}
       </div>
 
       <div class="view-all-wrap fade-in">

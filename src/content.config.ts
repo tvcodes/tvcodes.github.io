@@ -9,7 +9,6 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     category: z.enum(["live", "die", "remember"]),
     featured: z.boolean().default(false),
-    coverImage: z.string().optional(),
     heroImage: z.string().optional(),
     heroImagePosition: z.string().optional(),
     heroImageCaption: z.string().optional(),
