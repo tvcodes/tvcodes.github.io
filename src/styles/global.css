@@ -314,7 +314,7 @@ main{ position:relative; z-index:1; }
 
 .featured-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns:repeat(3, 1fr);
   gap:28px;
   max-width:1100px;
 }
@@ -325,6 +325,7 @@ main{ position:relative; z-index:1; }
   align-items:flex-start;
   gap:14px;
   padding:28px;
+  min-height:400px;
   background:linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.01));
   border:1px solid var(--border);
   border-radius:var(--r-lg);
@@ -368,9 +369,18 @@ main{ position:relative; z-index:1; }
 }
 
 .featured-card-desc{
+  flex:1;
   color:var(--text-muted);
   font-size:14.5px;
   line-height:1.6;
+  display:-webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+@media (max-width:900px){
+  .featured-grid{ grid-template-columns:1fr; }
 }
 /* ===================== ABOUT ===================== */
 .about-hero {
