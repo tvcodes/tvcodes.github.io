@@ -353,6 +353,8 @@ main{ position:relative; z-index:1; }
 }
 
 .featured-card-btn{
+  align-self:center;
+  margin-top:20px;
   font-size:13px;
   font-weight:600;
   color:#5b8def;
@@ -381,6 +383,11 @@ main{ position:relative; z-index:1; }
 
 @media (max-width:900px){
   .featured-grid{ grid-template-columns:1fr; }
+}
+
+.view-all-wrap{
+  text-align:center;
+  margin-top:75px;
 }
 /* ===================== ABOUT ===================== */
 .about-hero {
