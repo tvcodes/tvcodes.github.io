@@ -310,7 +310,7 @@ main{ position:relative; z-index:1; }
 }
 
 /* ===================== FEATURED ===================== */
-.featured-heading{ font-family:var(--font-head); font-size:clamp(28px,3vw,38px); font-weight:500; margin-bottom:24px; }
+.featured-heading{ display:flex; gap:10px; font-family:var(--font-head); font-size:19px; font-weight:600; margin-bottom:10px; }
 
 .featured-grid{
   display:grid;
