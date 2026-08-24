@@ -113,7 +113,7 @@ Planned improvements:
 
 The source code is licensed under the **MIT License**. See the `LICENSE` file for details.
 
-Blog posts, writing, and images are © **tvcodes**. All rights reserved. They may not be reproduced or redistributed without permission.
+Blog posts, writing, and images are © 2026 tvcodes. All rights reserved. They may not be reproduced or redistributed without permission.
 
 ---
 
