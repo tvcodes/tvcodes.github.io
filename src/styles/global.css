@@ -320,21 +320,21 @@ main{ position:relative; z-index:1; }
 }
 
 .featured-grid{
-  display:flex !important; /* failsafe, đề phòng còn rule display:grid cũ ở đâu đó đè lên */
+  display:flex !important; 
   flex-wrap:nowrap;
   gap:28px;
   overflow-x:auto;
-  overflow-y:hidden; /* chặn luôn thanh cuộn dọc phát sinh ngoài ý muốn */
+  overflow-y:hidden;
   scroll-snap-type:x proximity;
   padding-bottom:12px;
   max-width:100%;
   flex:1;
   min-width:0;
 
-  /* dẹp thanh cuộn hoàn toàn — Firefox */
+
   scrollbar-width:none;
 }
-/* dẹp thanh cuộn hoàn toàn — Chrome/Safari/Edge */
+
 .featured-grid::-webkit-scrollbar{
   display:none;
 }
@@ -433,7 +433,7 @@ main{ position:relative; z-index:1; }
 @media (max-width:640px){
   .featured-nav-btn{ display:none; }
   .featured-card{
-    flex:0 0 85vw; /* trên điện thoại cho card rộng gần full màn, dễ đọc hơn 280px cố định */
+    flex:0 0 85vw; 
     width:85vw;
   }
 }
@@ -681,8 +681,6 @@ main{ position:relative; z-index:1; }
   .hero-content{ max-width:100%; }
   .section{ padding:64px 24px; }
   .cards-grid{ grid-template-columns:1fr; max-width:420px; }
-  .featured-grid{ flex-direction:column; align-items:stretch; gap:36px; }
-  .featured-image{ width:100%; }
   .about-hero{ padding:120px 24px 40px; }
   .about-body{ padding:0 24px 60px; margin: 0; max-width: 100%; }
   .blog-head{ padding:120px 24px 36px; }
