@@ -7,7 +7,6 @@ import Footer from "../../components/common/Footer.astro";
 
 const posts = await getCollection("blog");
 
-
 posts.sort(
   (a, b) =>
     b.data.pubDate.getTime() -
@@ -24,24 +23,33 @@ posts.sort(
       <h1>All Posts</h1>
     </div>
 
-    <div class="posts-grid">
-      {
-        posts.map((post) => (
-          <a
-            href={`/blog/${post.id}`}
-            class="post-card"
-          >
-            <span class="post-tag">
-              {post.data.category}
-            </span>
+    {posts.length === 0 ? (
+      <p class="empty-state">Chưa có bài viết nào.</p>
+    ) : (
+      <div class="posts-list">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="post-list-item">
+            <div class="post-list-thumb">
+              {post.data.heroImage ? (
+                <img src={post.data.heroImage} alt={post.data.title} />
+              ) : (
+                <span class="post-list-thumb-fallback">
+                  {post.data.title.charAt(0)}
+                </span>
+              )}
+            </div>
 
-            <h3>{post.data.title}</h3>
+            <div class="post-list-body">
+              <h3>{post.data.title}</h3>
+            </div>
 
-            <p>{post.data.description}</p>
+            <p class="post-list-desc">{post.data.description}</p>
+
+            <span class="post-list-arrow" aria-hidden="true">→</span>
           </a>
-        ))
-      }
-    </div>
+        ))}
+      </div>
+    )}
   </main>
 
   <Footer />
