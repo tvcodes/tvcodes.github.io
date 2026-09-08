@@ -320,26 +320,23 @@ main{ position:relative; z-index:1; }
 }
 
 .featured-grid{
-  display:flex;
+  display:flex !important; /* failsafe, đề phòng còn rule display:grid cũ ở đâu đó đè lên */
   flex-wrap:nowrap;
   gap:28px;
   overflow-x:auto;
+  overflow-y:hidden; /* chặn luôn thanh cuộn dọc phát sinh ngoài ý muốn */
   scroll-snap-type:x proximity;
-  padding-bottom:12px; /* chừa chỗ cho scrollbar khỏi đè lên card */
+  padding-bottom:12px;
   max-width:100%;
   flex:1;
-  min-width:0; /* để flex item co lại đúng, không bị tràn ra ngoài */
+  min-width:0;
 
-  /* ẩn scrollbar mặc định cho gọn, vẫn kéo ngang được bình thường */
-  scrollbar-width:thin;
-  scrollbar-color:rgba(91,141,239,0.4) transparent;
+  /* dẹp thanh cuộn hoàn toàn — Firefox */
+  scrollbar-width:none;
 }
+/* dẹp thanh cuộn hoàn toàn — Chrome/Safari/Edge */
 .featured-grid::-webkit-scrollbar{
-  height:6px;
-}
-.featured-grid::-webkit-scrollbar-thumb{
-  background:rgba(91,141,239,0.4);
-  border-radius:4px;
+  display:none;
 }
 
 .featured-card{
@@ -355,7 +352,6 @@ main{ position:relative; z-index:1; }
   text-decoration:none;
   color:inherit;
 
-  /* cố định bề rộng card, không co giãn theo hàng nữa */
   flex:0 0 340px;
   width:340px;
   scroll-snap-align:start;
@@ -435,15 +431,17 @@ main{ position:relative; z-index:1; }
 }
 
 @media (max-width:640px){
-  /* trên mobile ẩn nút mũi tên đi, để người dùng vuốt tay là chính */
   .featured-nav-btn{ display:none; }
+  .featured-card{
+    flex:0 0 85vw; /* trên điện thoại cho card rộng gần full màn, dễ đọc hơn 280px cố định */
+    width:85vw;
+  }
 }
 
 .view-all-wrap{
   text-align:center;
   margin-top:75px;
 }
-
 /* ===================== ABOUT ===================== */
 .about-hero {
     text-align: center;
