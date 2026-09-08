@@ -6,7 +6,9 @@ const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate
 
 const featuredPost = sorted.find((p) => p.data.featured) ?? sorted[0];
 const rest = sorted.filter((p) => p.id !== featuredPost?.id);
-const otherPosts = rest.slice(0, 3);
+
+// bỏ .slice(0, 3) để hiện hết tất cả bài, không giới hạn 4 nữa
+const otherPosts = rest;
 
 const displayPosts = featuredPost ? [featuredPost, ...otherPosts] : [];
 
@@ -24,16 +26,22 @@ function formatDate(date: Date) {
     <>
       <h2 class="featured-heading">Featured</h2>
 
-      <div class="featured-grid">
-        {displayPosts.map((post) => (
-          <a href={`/blog/${post.id}`} class="featured-card fade-in">
-            <span class="featured-card-date">📅 {formatDate(post.data.pubDate)}</span>
-            <h3 class="featured-card-title">{post.data.title}</h3>
-            <span class="featured-card-btn">View more</span>
-            <hr class="featured-card-divider" />
-            <p class="featured-card-desc">{post.data.description}</p>
-          </a>
-        ))}
+      <div class="featured-row">
+        <button id="featuredPrev" class="featured-nav-btn" aria-label="Cuộn trái">‹</button>
+
+        <div class="featured-grid" id="featuredGrid">
+          {displayPosts.map((post) => (
+            <a href={`/blog/${post.id}`} class="featured-card fade-in">
+              <span class="featured-card-date">📅 {formatDate(post.data.pubDate)}</span>
+              <h3 class="featured-card-title">{post.data.title}</h3>
+              <span class="featured-card-btn">View more</span>
+              <hr class="featured-card-divider" />
+              <p class="featured-card-desc">{post.data.description}</p>
+            </a>
+          ))}
+        </div>
+
+        <button id="featuredNext" class="featured-nav-btn" aria-label="Cuộn phải">›</button>
       </div>
 
       <div class="view-all-wrap fade-in">

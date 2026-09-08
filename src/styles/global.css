@@ -312,11 +312,34 @@ main{ position:relative; z-index:1; }
 /* ===================== FEATURED ===================== */
 .featured-heading{ font-family:var(--font-head); font-size:clamp(28px,3vw,38px); font-weight:500; margin-bottom:24px; } 
 
+.featured-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  max-width:100%;
+}
+
 .featured-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  display:flex;
+  flex-wrap:nowrap;
   gap:28px;
-  max-width:1100px;
+  overflow-x:auto;
+  scroll-snap-type:x proximity;
+  padding-bottom:12px; /* chừa chỗ cho scrollbar khỏi đè lên card */
+  max-width:100%;
+  flex:1;
+  min-width:0; /* để flex item co lại đúng, không bị tràn ra ngoài */
+
+  /* ẩn scrollbar mặc định cho gọn, vẫn kéo ngang được bình thường */
+  scrollbar-width:thin;
+  scrollbar-color:rgba(91,141,239,0.4) transparent;
+}
+.featured-grid::-webkit-scrollbar{
+  height:6px;
+}
+.featured-grid::-webkit-scrollbar-thumb{
+  background:rgba(91,141,239,0.4);
+  border-radius:4px;
 }
 
 .featured-card{
@@ -331,6 +354,11 @@ main{ position:relative; z-index:1; }
   transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
   text-decoration:none;
   color:inherit;
+
+  /* cố định bề rộng card, không co giãn theo hàng nữa */
+  flex:0 0 340px;
+  width:340px;
+  scroll-snap-align:start;
 }
 .featured-card:hover{
   transform:translateY(-8px);
@@ -379,14 +407,43 @@ main{ position:relative; z-index:1; }
   overflow:hidden;
 }
 
+.featured-nav-btn{
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  color:#5b8def;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  font-size:20px;
+  cursor:pointer;
+  flex-shrink:0;
+  transition:background .2s var(--ease), opacity .2s var(--ease);
+}
+.featured-nav-btn:hover:not(:disabled){
+  background:rgba(91,141,239,0.15);
+}
+.featured-nav-btn:disabled{
+  opacity:0.3;
+  cursor:default;
+}
+
 @media (max-width:900px){
-  .featured-grid{ grid-template-columns:1fr; }
+  .featured-card{
+    flex:0 0 280px;
+    width:280px;
+  }
+}
+
+@media (max-width:640px){
+  /* trên mobile ẩn nút mũi tên đi, để người dùng vuốt tay là chính */
+  .featured-nav-btn{ display:none; }
 }
 
 .view-all-wrap{
   text-align:center;
   margin-top:75px;
 }
+
 /* ===================== ABOUT ===================== */
 .about-hero {
     text-align: center;
