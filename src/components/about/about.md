@@ -11,6 +11,7 @@ Có lẽ vì thế mà ở đây sẽ không đơn thuần chỉ có những bà
 
 Nếu sứ mệnh của Artemis là đưa con người trở lại Mặt Trăng, thì sứ mệnh của ME-NIVERSE là đưa mình khám phá vũ trụ bên trong chính mình. Mình không viết vì đã có câu trả lời cho mọi thứ. Mình viết để hiểu bản thân hơn một chút sau mỗi bài viết, và biết đâu, cũng giúp ai đó hiểu chính mình thêm một chút trên hành trình của họ.
 
-Mình lấy bút danh là An Phong vì mình nhớ đến bức ảnh chú ngựa nhỏ vừa chạy vừa khóc dưới cơn mưa (Mã Tiểu Dã). Trông có vẻ yếu đuối, nhưng phía sau nó luôn là cái bóng của một con tuấn mã đang phi nước đại. "An" là bình yên, "Phong" là gió. Có người hiểu đó là bình an giữa giông bão, có người lại nghĩ đến ngọn gió xuân mang theo những khởi đầu mới. Mình không biết rồi sẽ trở thành người như thế nào, nhưng hy vọng, dù đi qua bao nhiêu đổi thay, mình vẫn giữ được một chút bình yên trong lòng, sống một cuộc đời phiêu diêu, tự tại.
+Mình lấy bút danh là An Phong vì mình nhớ đến bức ảnh chú ngựa nhỏ vừa chạy vừa khóc dưới cơn mưa (Mã Tiểu Dã). Trông có vẻ yếu đuối, nhưng phía sau nó luôn là cái bóng của một con tuấn mã đang phi nước đại. “An” là bình yên, “Phong” là gió. Có người hiểu đó là bình an giữa giông bão, có người lại nghĩ đến ngọn gió xuân mang theo những khởi đầu mới. Mình không biết rồi sẽ trở thành người như thế nào, nhưng hy vọng, dù đi qua bao nhiêu đổi thay, mình vẫn giữ được một chút bình yên trong lòng, sống một cuộc đời phiêu diêu, tự tại.
 
 Nếu một ngày nào đó bạn tìm thấy chính mình trong một bài viết ở đây, thì có lẽ ME-NIVERSE đã hoàn thành thêm một sứ mệnh nhỏ. Cảm ơn vì đã ghé thăm góc nhỏ này của vũ trụ. Hy vọng ở đâu đó giữa những con chữ, bạn cũng sẽ tìm thấy một vì sao dành cho riêng mình.
+
