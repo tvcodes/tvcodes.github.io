@@ -43,28 +43,25 @@ const categoryTitle: Record<string, string> = {
       <p class="empty-state">Chưa có bài viết nào trong category này.</p>
     ) : (
       <div class="posts-list">
-        {posts.map((post) => (
-          <a href={`/blog/${post.id}`} class="post-list-item">
-            <div class="post-list-thumb">
-              {post.data.heroImage ? (
-                <img src={post.data.heroImage} alt={post.data.title} />
-              ) : (
-                <span class="post-list-thumb-fallback">
-                  {post.data.title.charAt(0)}
-                </span>
-              )}
-            </div>
+      {posts.map((post) => (
+        <a href={`/blog/${post.id}`} class="post-list-item">
+          <div class="post-list-thumb">
+            {post.data.heroImage ? (
+              <img src={post.data.heroImage} alt={post.data.title} />
+            ) : (
+              <span class="post-list-thumb-fallback">
+                {post.data.title.charAt(0)}
+              </span>
+            )}
+          </div>
 
-            <div class="post-list-body">
-              <h3>{post.data.title}</h3>
-            </div>
-
+          <div class="post-list-body">
+            <h3>{post.data.title}</h3>
             <p class="post-list-desc">{post.data.description}</p>
-
-            <span class="post-list-arrow" aria-hidden="true">→</span>
-          </a>
-        ))}
-      </div>
+          </div>
+        </a>
+      ))}
+    </div>
     )}
   </main>
 
