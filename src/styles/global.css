@@ -244,7 +244,7 @@ main{ position:relative; z-index:1; }
 
 .post-list-item{
   display:flex;
-  align-items:flex-start;
+  align-items:center; 
   gap:28px;
   padding:32px 8px;
   border-bottom:1px solid var(--border-soft);
@@ -257,9 +257,9 @@ main{ position:relative; z-index:1; }
 }
 
 .post-list-thumb{
-  width:260px;
-  height:160px;
-  border-radius:var(--r-md);
+  width:64px;
+  height:64px;
+  border-radius:50%;
   overflow:hidden;
   background:rgba(91,141,239,0.12);
   display:flex;
@@ -273,7 +273,7 @@ main{ position:relative; z-index:1; }
   object-fit:cover;
 }
 .post-list-thumb-fallback{
-  font-size:38px;
+  font-size:26px;
   font-weight:700;
   color:var(--blue-bright);
 }

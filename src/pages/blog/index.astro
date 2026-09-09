@@ -30,8 +30,8 @@ posts.sort(
         {posts.map((post) => (
           <a href={`/blog/${post.id}`} class="post-list-item">
             <div class="post-list-thumb">
-              {post.data.heroImage ? (
-                <img src={post.data.heroImage} alt={post.data.title} />
+              {post.data.author.avatar ? (
+                <img src={post.data.author.avatar} alt={post.data.title} />
               ) : (
                 <span class="post-list-thumb-fallback">
                   {post.data.title.charAt(0)}

@@ -45,16 +45,6 @@ const categoryTitle: Record<string, string> = {
       <div class="posts-list">
       {posts.map((post) => (
         <a href={`/blog/${post.id}`} class="post-list-item">
-          <div class="post-list-thumb">
-            {post.data.heroImage ? (
-              <img src={post.data.heroImage} alt={post.data.title} />
-            ) : (
-              <span class="post-list-thumb-fallback">
-                {post.data.title.charAt(0)}
-              </span>
-            )}
-          </div>
-
           <div class="post-list-body">
             <h3>{post.data.title}</h3>
             <p class="post-list-desc">{post.data.description}</p>
